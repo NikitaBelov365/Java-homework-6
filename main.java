@@ -53,6 +53,7 @@ public class main {
     }
 
     public static void notebookSearching() {
+        Notebook notebook = new Notebook();
         Scanner scanner = new Scanner(System.in);
         System.out.println("What do you need to find?");
         System.out.println("Press 1 for notebook model");
@@ -64,15 +65,7 @@ public class main {
         System.out.println("Press 7 for notebook HDD volume");
         System.out.println("Press 8 for notebook RAM volume");
         int userInput = scanner.nextInt();
-        switch (userInput) {
-            case 1 -> {
-                System.out.println("Entering adding mode");
-                break;
-            }
-            case 2 -> {
-                System.out.println("Igfor");
-            }
-        }
+        notebook.notebookStringSearch(userInput);
         scanner.close();
     }
 }

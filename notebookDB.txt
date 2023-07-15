@@ -3,3 +3,4 @@
 3, 311, Petrovich Ultima, Petrovich inc, Green, Win10, 256, 1024, 512, 1024
 4, 123142, Igor Standart, Igor corp, Black, Win10, 256, 512, 256, 612
 5, serial = 322, Ivan Main, Ivan's corp, White, Win11, Diagonal = 15, price = 13000, HDD = 256, RAM =16
+6, serial = 1, NewIntelNotebook, Intel, Black, Win10, Diagonal = 12, price = 12000, HDD = 512, RAM =8

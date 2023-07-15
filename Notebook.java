@@ -3,6 +3,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Notebook {
     int id;
@@ -64,5 +69,55 @@ public class Notebook {
         }
     }
 
+    public void searchSplitter (int i) {
+        if (i < 5) {
+            notebookStringSearch(i);
+        } else {
+            notebookIntegerSearch(i);
+        }
+    }
 
+    public void notebookIntegerSearch(int i) {
+        System.out.println(1);
+    }
+
+    public void notebookStringSearch (int i) {
+        try {
+            Set<String> mySet = new TreeSet<>();
+            i = i + 1;
+            File file = new File("C:/Users/Н/Edu/Java/homework/6/notebookDB.txt");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line = null;
+            System.out.println("We got next options: ");
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                mySet.add(parts[i]);
+            }
+            HashMap<Integer, String> myHashMap = new HashMap<>();
+            int j = 1;
+            for (String string : mySet) {
+                myHashMap.put(j, string);
+                j ++;
+            }
+            System.out.println(myHashMap.toString());
+            System.out.println("Input number that you intrested in: ");
+            Scanner scanner = new Scanner(System.in);
+            int number = scanner.nextInt();
+            BufferedReader brr = new BufferedReader(new FileReader(file));
+            System.out.println("Here you are: ");
+            String lines = null;
+            String lookingFor = myHashMap.get(number);
+            while ((lines = brr.readLine()) != null) {
+                String[] part = lines.split(",");
+
+                if (lookingFor.equals(part[i])) {
+                    System.out.println(lines);
+                }
+            }
+            scanner.close();
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

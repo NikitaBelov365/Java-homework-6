@@ -1,0 +1,5 @@
+1, 111, Petrovich Lite, Petrovich inc, Black, Ubuntu 22.10, 16, 25, 32, 44
+2, 211, Petrovich Pro, Petrovich inc, Yellow, Ubuntu 24.10, 128, 648, 256, 224
+3, 311, Petrovich Ultima, Petrovich inc, Green, Win10, 256, 1024, 512, 1024
+4, 123142, Igor Standart, Igor corp, Black, Win10, 256, 512, 256, 612
+5, serial = 322, Ivan Main, Ivan's corp, White, Win11, Diagonal = 15, price = 13000, HDD = 256, RAM =16

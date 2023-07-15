@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -59,7 +58,7 @@ public class Notebook {
                     idAppropriator() + ", serial = " + serialNumber + ", " + modelName + ", " + manufactorersName + ", "
                             + color + ", " + operatingSystem + ", Diagonal = " + screenDiagonal + ", price = " + price
                             + ", HDD = " + hardDriveVolume
-                            + ", RAM =" + RAM + "\n");
+                            + ", RAM = " + RAM + "\n");
 
             writer.flush();
             System.out.println("model added successfully");
@@ -69,7 +68,7 @@ public class Notebook {
         }
     }
 
-    public void searchSplitter (int i) {
+    public void searchSplitter(int i) {
         if (i < 5) {
             notebookStringSearch(i);
         } else {
@@ -78,10 +77,30 @@ public class Notebook {
     }
 
     public void notebookIntegerSearch(int i) {
-        System.out.println(1);
+        i = i + 1;
+        System.out.println("Input minimum value: ");
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        scanner.close();
+        try {
+            File file = new File("C:/Users/Н/Edu/Java/homework/6/notebookDB.txt");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line = null;
+            System.out.println("We got next options: ");
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                String[] part = parts[i].split("=");
+                
+                if (number < Integer.parseInt(part[1].trim())) {
+                    System.out.println(line);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void notebookStringSearch (int i) {
+    public void notebookStringSearch(int i) {
         try {
             Set<String> mySet = new TreeSet<>();
             i = i + 1;
@@ -97,7 +116,7 @@ public class Notebook {
             int j = 1;
             for (String string : mySet) {
                 myHashMap.put(j, string);
-                j ++;
+                j++;
             }
             System.out.println(myHashMap.toString());
             System.out.println("Input number that you intrested in: ");

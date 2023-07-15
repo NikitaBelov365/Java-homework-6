@@ -65,7 +65,7 @@ public class main {
         System.out.println("Press 7 for notebook HDD volume");
         System.out.println("Press 8 for notebook RAM volume");
         int userInput = scanner.nextInt();
-        notebook.notebookStringSearch(userInput);
+        notebook.searchSplitter(userInput);
         scanner.close();
     }
 }
